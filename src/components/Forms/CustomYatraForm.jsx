@@ -1,0 +1,207 @@
+"use client";
+
+import { useState } from "react";
+import MaxWidthContainer from "../Common/MaxWidthContainer";
+import AnimatedSelect from "../Forms/AnimatedSelect";
+
+const CITY_OPTIONS = [
+  { value: "Haridwar", label: "Haridwar" },
+  { value: "Rishikesh", label: "Rishikesh" },
+  { value: "Dehradun", label: "Dehradun" },
+  { value: "Kotdwar", label: "Kotdwar" },
+  { value: "Delhi", label: "Delhi" },
+];
+
+const VEHICLE_OPTIONS = [
+  { value: "Swift Dzire", label: "Swift Dzire" },
+  { value: "Toyota Glanza", label: "Toyota Glanza" },
+  { value: "Maruti Suzuki Ertiga", label: "Maruti Suzuki Ertiga" },
+  { value: "Traveller", label: "Traveller" },
+];
+
+export default function CustomYatraForm() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    pickup: "",
+    travelDate: "",
+    days: "",
+    people: "",
+    vehicle: "",
+    requirements: "",
+  });
+
+  const handleChange = (field) => (e) =>
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+
+  const handleFieldValue = (field) => (value) =>
+    setForm((prev) => ({ ...prev, [field]: value }));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Custom Yatra request:", form);
+  }
+
+  return (
+    <MaxWidthContainer className="mb-4 lg:my-10">
+      {/* Heading */}
+      <div className="text-center max-w-2xl mx-auto mb-6 lg:mb-10">
+        <h2 className="text-2xl sm:text-3xl lg:h2 font-extrabold text-gray-900 mb-2">
+          Plan Your Custom Yatra
+        </h2>
+        <p className="text-text-secondary max-lg:text-sm leading-normal">
+          Tell us your requirements and we&apos;ll create a perfect itinerary
+          for you.
+        </p>
+      </div>
+
+      {/* Form Card */}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-4xl mx-auto rounded-2xl border border-border p-4 lg:p-8"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4">
+          {/* Name */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Name
+            </label>
+            <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
+              <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
+                <img src="/icons/lucide_user.svg" alt="user icon" />
+              </span>
+              <input
+                type="text"
+                value={form.name}
+                onChange={handleChange("name")}
+                placeholder="Full Name"
+                className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          {/* Phone Number */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Phone Number
+            </label>
+            <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
+              <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
+                <img src="/icons/fluent_call-16-regular.svg" alt="phone icon" />
+              </span>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={handleChange("phone")}
+                placeholder="e.g. +91 9876543210"
+                className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          {/* pickup */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Pickup
+            </label>
+            <AnimatedSelect
+              icon="/icons/basil_location-outline.svg"
+              value={form.city}
+              onChange={handleFieldValue("city")}
+              options={CITY_OPTIONS}
+              placeholder="Select City"
+            />
+          </div>
+
+          {/* Travel Date */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Travel Date
+            </label>
+            <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
+              <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
+                <img src="/icons/uiw_date.svg" alt="calendar icon" />
+              </span>
+              <input
+                type="date"
+                value={form.travelDate}
+                onChange={handleChange("travelDate")}
+                className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent [&::-webkit-calendar-picker-indicator]:opacity-50"
+              />
+            </div>
+          </div>
+
+          {/* No. of Days */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              No. of Days
+            </label>
+            <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
+              <input
+                type="number"
+                value={form.days}
+                onChange={handleChange("days")}
+                placeholder="e.g. 5"
+                className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          {/* No. of People */}
+          <div className="flex flex-col">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              No. of People
+            </label>
+            <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
+              <input
+                type="number"
+                value={form.people}
+                onChange={handleChange("people")}
+                placeholder="e.g. 4"
+                className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          {/* Choose Vehicle */}
+          <div className="flex flex-col sm:col-span-2">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Choose Vehicle
+            </label>
+            <AnimatedSelect
+              icon="/icons/car.svg"
+              value={form.vehicle}
+              onChange={handleFieldValue("vehicle")}
+              options={VEHICLE_OPTIONS}
+              placeholder="Select Vehicle"
+            />
+          </div>
+
+          {/* Specific Places / Requirements */}
+          <div className="flex flex-col sm:col-span-2">
+            <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+              Specific Places to Visit / Requirements
+            </label>
+            <textarea
+              value={form.requirements}
+              onChange={handleChange("requirements")}
+              placeholder="e.g.  I want to visit Triyuginarayan Temple also..."
+              rows={5}
+              className="text-text-primery max-lg:text-sm leading-normal w-full outline-none bg-transparent placeholder:text-gray-400 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border resize-none"
+            />
+          </div>
+
+          {/* Submit */}
+          <div className="col-span-1 sm:col-span-2 w-full mt-1 lg:mt-2">
+            <button
+              type="submit"
+              className="text-text-primary leading-normal max-lg:text-sm font-bold flex justify-center items-center gap-2.5 py-2 lg:py-3.5 w-full bg-primary rounded-lg cursor-pointer hover:bg-primary-hover transition duration-300 ease-in-out"
+            >
+              <span>Get Custom Quote</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </MaxWidthContainer>
+  );
+}

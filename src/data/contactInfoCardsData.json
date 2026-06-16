@@ -1,0 +1,23 @@
+[
+  {
+    "id": "phone",
+    "icon": "/icons/solar_phone-linear.svg",
+    "title": "Call Us",
+    "description": "Speak directly to our support team.",
+    "value": "+91 98765 43210"
+  },
+  {
+    "id": "locations",
+    "icon": "/icons/black_location.svg",
+    "title": "Pickup Locations",
+    "description": "Available across major hubs.",
+    "locations": ["Kedarnath", "Dehradun", "Delhi NCR"]
+  },
+  {
+    "id": "availability",
+    "icon": "/icons/black_watch.svg",
+    "title": "Availability",
+    "description": "Always ready to serve you.",
+    "value": "24/7 Support"
+  }
+]

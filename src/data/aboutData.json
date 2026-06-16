@@ -1,0 +1,17 @@
+{
+  "badge": "Who We Are",
+  "title": "About Our Service",
+  "paragraphs": [
+    "YatraCabs is a premier taxi service dedicated to providing safe, reliable, and comfortable transportation across Uttarakhand and Delhi NCR. Founded with a vision to make spiritual journeys and hill travel accessible to everyone, we specialize in Char Dham Yatra packages and intercity transfers.",
+    "Our fleet consists of well-maintained Sedans, SUVs, and Tempo Travelers driven by experienced hill drivers who prioritize your safety above all else. Whether you're a pilgrim visiting the holy shrines or a tourist exploring the mountains, we ensure a smooth and memorable journey."
+  ],
+  "stats": [
+    { "value": "5k+", "label": "Decent Travelers" },
+    { "value": "50+", "label": "Happy Travelers" },
+    { "value": "100%", "label": "very Happy Travelers" }
+  ],
+  "image": {
+    "src": "/assets/images/aboutImage.webp",
+    "alt": "Driver on a road trip"
+  }
+}

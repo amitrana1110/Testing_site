@@ -1,0 +1,20 @@
+{
+  "badge": "Premium Taxi Service",
+  "heading": "Divine Yatra Packages",
+  "subtext": "Experience a spiritual journey to the holy Dhams with comfort, safety, and experienced drivers.",
+  "backgroundImage": "/assets/images/banner.webp",
+  "buttons": [
+    {
+      "id": "custom",
+      "label": "Custom Packages",
+      "variant": "primary",
+      "href": "/packages"
+    },
+    {
+      "id": "call",
+      "label": "Call Now",
+      "variant": "dark",
+      "href": "tel:+919876543210"
+    }
+  ]
+}

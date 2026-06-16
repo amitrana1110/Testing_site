@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What are your taxi charges?",
+    "answer": "Our charges depend on the route, vehicle type, and distance. We offer transparent pricing with no hidden fees. You can get an instant quote by filling out the booking form on our website."
+  },
+  {
+    "id": 2,
+    "question": "Is advance payment required?",
+    "answer": "A small advance may be required to confirm your booking, especially for outstation trips. The remaining amount can be paid after the journey is completed."
+  },
+  {
+    "id": 3,
+    "question": "Do you provide hill-experienced drivers?",
+    "answer": "Yes, all our drivers are trained and experienced in hill driving. They are familiar with mountain routes, weather conditions, and safety protocols for Himalayan journeys."
+  },
+  {
+    "id": 4,
+    "question": "Can I cancel my booking?",
+    "answer": "Yes, you can cancel your booking. Cancellations made 24 hours before the trip are free of charge. For cancellations within 24 hours, a nominal fee may apply."
+  },
+  {
+    "id": 5,
+    "question": "Do you offer airport pickup and drop services?",
+    "answer": "Yes, we provide airport pickup and drop services from all major airports in the region including Dehradun (Jolly Grant) Airport. Our driver will be there on time with your name board."
+  },
+  {
+    "id": 6,
+    "question": "Are night-time trips available?",
+    "answer": "Yes, we operate 24/7. Night trips are available for all routes. Additional charges may apply for trips starting between 10 PM and 6 AM."
+  }
+]

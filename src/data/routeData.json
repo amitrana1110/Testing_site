@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "from": "Kotdwara",
+    "to": "Delhi",
+    "tag": "Capital City Connect",
+    "img": "/assets/images/india_gate.webp",
+    "fare": "₹2,500",
+    "duration": "5-6 hrs",
+    "distance": "260 km"
+  },
+  {
+    "id": 2,
+    "from": "Dehradun",
+    "to": "Kedarnath",
+    "tag": "Divine Yatra",
+    "img": "/assets/images/kedarnath.webp",
+    "fare": "₹4,500",
+    "duration": "8-9 hrs",
+    "distance": "250 km"
+  },
+  {
+    "id": 3,
+    "from": "Delhi",
+    "to": "Badrinath",
+    "tag": "Himalayan Journey",
+    "img": "/assets/images/badrinath.webp",
+    "fare": "₹6,000",
+    "duration": "12-13 hrs",
+    "distance": "520 km"
+  },
+  {
+    "id": 4,
+    "from": "Kotdwara",
+    "to": "Haridwar",
+    "tag": "Ganga Aarti Trip",
+    "img": "/assets/images/haridwar.webp",
+    "fare": "₹1,200",
+    "duration": "2-3 hrs",
+    "distance": "90 km"
+  },
+  {
+    "id": 5,
+    "from": "Dehradun",
+    "to": "Delhi",
+    "tag": "Express Connect",
+    "img": "/assets/images/delhi.webp",
+    "fare": "₹3,000",
+    "duration": "6-7 hrs",
+    "distance": "300 km"
+  },
+  {
+    "id": 6,
+    "from": "Kotdwara",
+    "to": "Rishikesh",
+    "tag": "Spiritual Route",
+    "img": "/assets/images/rishikesh.webp",
+    "fare": "₹1,800",
+    "duration": "3-4 hrs",
+    "distance": "120 km"
+  }
+]

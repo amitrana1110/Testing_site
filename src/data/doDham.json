@@ -1,0 +1,52 @@
+{
+  "id": "kedarnath-badrinath-yatra",
+  "badge": "Best Seller",
+  "title": "Kedarnath & Badrinath Yatra Package",
+  "duration": "6–7 Days",
+  "startingPoints": ["Kotdwar", "Dehradun", "Delhi"],
+  "price": 18500,
+  "currency": "₹",
+  "images": [
+    { "src": "/assets/images/temple_1.webp", "alt": "Kedarnath Temple" },
+    { "src": "/assets/images/temple_2.webp", "alt": "Badrinath Temple" }
+  ],
+  "temples": ["Kedarnath", "Badrinath"],
+  "includes": [
+    "AC Sedan/Innova for transport",
+    "Experienced Hill Driver",
+    "Toll, Parking & Driver Allowance",
+    "24/7 Support during trip"
+  ],
+  "itinerary": [
+    {
+      "day": "Day 1",
+      "title": "Pickup & Travel to Guptkashi",
+      "description": "Pickup from Delhi, Dehradun, or Kotdwar and drive to Guptkashi. Enjoy scenic Himalayan views along the way. Check in at hotel for overnight stay."
+    },
+    {
+      "day": "Day 2",
+      "title": "Kedarnath Darshan",
+      "description": "Early morning trek or helicopter ride to Kedarnath Temple. Attend darshan and explore the sacred surroundings. Overnight stay in Kedarnath or return to Guptkashi depending on travel plan."
+    },
+    {
+      "day": "Day 3",
+      "title": "Return from Kedarnath",
+      "description": "Complete morning darshan if required and return to Guptkashi. Relax and enjoy the peaceful mountain atmosphere. Overnight stay at Guptkashi."
+    },
+    {
+      "day": "Day 4",
+      "title": "Travel to Badrinath",
+      "description": "Drive from Guptkashi to Badrinath through beautiful Himalayan routes. Check in at hotel and attend evening aarti at Badrinath Temple."
+    },
+    {
+      "day": "Day 5",
+      "title": "Badrinath Dham & Mana Village",
+      "description": "Morning darshan at Badrinath Temple followed by a visit to Mana Village, Vyas Gufa, Ganesh Gufa, and Bhim Pul. Return to hotel for overnight stay."
+    },
+    {
+      "day": "Day 6",
+      "title": "Return Journey",
+      "description": "Begin your return journey towards Dehradun, Kotdwar, or Delhi with unforgettable memories of the sacred Do Dham Yatra."
+    }
+  ]
+}

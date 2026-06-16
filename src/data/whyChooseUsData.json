@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "/icons/whychoose/carbon_badge.svg",
+    "title": "Experienced Drivers",
+    "description": "Professional drivers with extensive experience in hill driving and long routes."
+  },
+  {
+    "icon": "/icons/whychoose/hugeicons_clean.svg",
+    "title": "Clean Vehicles",
+    "description": "Sanitized, well-maintained fleet of Sedans and SUVs for your comfort."
+  },
+  {
+    "icon": "/icons/whychoose/ix_support.svg",
+    "title": "24/7 Support",
+    "description": "Round-the-clock customer support to assist you with bookings and queries."
+  },
+  {
+    "icon": "/icons/whychoose/solar_wallet-outline.svg",
+    "title": "Affordable Pricing",
+    "description": "Transparent billing with no hidden charges. Best market rates guaranteed."
+  }
+]

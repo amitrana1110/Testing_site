@@ -1,0 +1,54 @@
+{
+  "id": "complete-4-dham",
+  "badge": "Most Popular",
+  "title": "Complete 4 Dham Yatra Package",
+  "duration": "10–12 Days",
+  "startingPoints": ["Kotdwar", "Dehradun", "Delhi"],
+  "price": 28500,
+  "currency": "₹",
+  "images": [
+    { "src": "/assets/images/temple_1.webp", "alt": "Kedarnath Temple" },
+    { "src": "/assets/images/temple_2.webp", "alt": "Badrinath Temple" },
+    { "src": "/assets/images/temple_3.webp", "alt": "Gangotri Temple" },
+    { "src": "/assets/images/temple_4.webp", "alt": "Yamunotri Temple" }
+  ],
+  "temples": ["Yamunotri", "Gangotri", "Kedarnath", "Badrinath"],
+  "includes": [
+    "AC Sedan/Innova for transport",
+    "Experienced Hill Driver",
+    "Toll, Parking & Driver Allowance",
+    "24/7 Support during trip"
+  ],
+  "itinerary": [
+    {
+      "day": "Day 1",
+      "title": "Pickup & Travel to Barkot",
+      "description": "Pickup from Kotdwar, Dehradun or Delhi and drive to Barkot. Check in at hotel and rest for the spiritual journey ahead."
+    },
+    {
+      "day": "Day 2",
+      "title": "Yamunotri Darshan",
+      "description": "Early morning trek to Yamunotri Temple (6 km). Perform puja and take a dip in the holy hot springs. Return to Barkot for overnight stay."
+    },
+    {
+      "day": "Day 3",
+      "title": "Travel to Uttarkashi",
+      "description": "Drive from Barkot to Uttarkashi via scenic Himalayan roads. Visit Vishwanath Temple in Uttarkashi. Overnight at hotel."
+    },
+    {
+      "day": "Day 4–6",
+      "title": "Gangotri & Kedarnath",
+      "description": "Day 4: Drive to Gangotri for darshan. Day 5: Drive to Guptkashi. Day 6: Helicopter or trek to Kedarnath Temple for darshan and blessings."
+    },
+    {
+      "day": "Day 7–9",
+      "title": "Badrinath & Mana Village",
+      "description": "Day 7: Drive towards Badrinath. Day 8: Temple darshan and visit Mana Village — the last Indian village before Tibet. Day 9: Begin return journey."
+    },
+    {
+      "day": "Final Day",
+      "title": "Return Journey",
+      "description": "Drive back to your starting point (Delhi/Dehradun/Kotdwar) with memories of a lifetime. Approximate arrival by evening."
+    }
+  ]
+}

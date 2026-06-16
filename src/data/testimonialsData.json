@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "img": "/assets/images/bhavya.webp",
+    "review": "Excellent service! The driver was very polite and the car was spotless. Had a very comfortable journey from Delhi to Dehradun.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "img": "/assets/images/bhavya.webp",
+    "review": "Booked a 4 Dham Yatra package. The itinerary was well planned and the driver was very knowledgeable about the routes. Highly recommended!",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Amit Verma",
+    "img": "/assets/images/bhavya.webp",
+    "review": "Very affordable rates compared to other services. The booking process was smooth and the cab arrived right on time.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Sneha Rawat",
+    "img": "/assets/images/bhavya.webp",
+    "review": "Amazing experience travelling to Kedarnath. The driver was experienced and made us feel safe throughout the journey.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "img": "/assets/images/bhavya.webp",
+    "review": "Best cab service from Kotdwara to Delhi. On time, clean vehicle, and very professional driver. Will definitely book again.",
+    "rating": 5
+  }
+]

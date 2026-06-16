@@ -1,0 +1,6 @@
+[
+  { "name": "Home", "path": "/" },
+  { "name": "Packages", "path": "/packages" },
+  { "name": "Contact & About", "path": "/contact-about" },
+  { "name": "Gallery", "path": "/gallery" }
+]

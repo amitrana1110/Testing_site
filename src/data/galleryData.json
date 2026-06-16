@@ -1,0 +1,125 @@
+{
+  "filters": ["All", "Kedarnath", "Badrinath", "Rishikesh", "Haridwar", "Dehradun", "Mussoorie", "Lansdowne", "Delhi"],
+  "photos": [
+    {
+      "id": 1,
+      "src": "/assets/images/bg.webp",
+      "thumb": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Mussoorie, Uttarakhand",
+      "tags": ["mussoorie"],
+      "color": "#7fa3c0",
+      "h": "tall"
+    },
+    {
+      "id": 2,
+      "src": "/assets/images/kedarnath.webp",
+      "thumb": "/assets/images/kedarnath.webp",
+      "author": "Rana Cab Traveler",
+      "location": "Kedarnath Temple",
+      "tags": ["kedarnath"],
+      "color": "#6b8f6b",
+      "h": "short"
+    },
+    {
+      "id": 3,
+      "src": "https://images.pexels.com/photos/38075655/pexels-photo-38075655.jpeg?_gl=1*zns5a2*_ga*MTExMzgxNzc1Mi4xNzgxNTIxMzcz*_ga_8JE65Q40S6*czE3ODE1MjEzNzMkbzEkZzEkdDE3ODE1MjE0NDQkajUyJGwwJGgw",
+      "thumb": "https://images.pexels.com/photos/38075655/pexels-photo-38075655.jpeg?_gl=1*zns5a2*_ga*MTExMzgxNzc1Mi4xNzgxNTIxMzcz*_ga_8JE65Q40S6*czE3ODE1MjEzNzMkbzEkZzEkdDE3ODE1MjE0NDQkajUyJGwwJGgw",
+      "author": "Rana Cab Traveler",
+      "location": "Lansdowne Pine Forest",
+      "tags": ["lansdowne"],
+      "color": "#2a3a5e",
+      "h": "medium"
+    },
+    {
+      "id": 4,
+      "src": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Haridwar Ghats",
+      "tags": ["haridwar"],
+      "color": "#c9a96e",
+      "h": "short"
+    },
+    {
+      "id": 5,
+      "src": "https://images.unsplash.com/photo-1439853949212-36089f9fe12b?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1439853949212-36089f9fe12b?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Badrinath Valley",
+      "tags": ["badrinath"],
+      "color": "#8baec4",
+      "h": "tall"
+    },
+    {
+      "id": 6,
+      "src": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Dehradun City",
+      "tags": ["dehradun"],
+      "color": "#5e7a5e",
+      "h": "medium"
+    },
+    {
+      "id": 7,
+      "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Kedarnath Peak",
+      "tags": ["kedarnath"],
+      "color": "#6b7a8d",
+      "h": "tall"
+    },
+    {
+      "id": 8,
+      "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Lansdowne Hills",
+      "tags": ["lansdowne"],
+      "color": "#1a1f3a",
+      "h": "medium"
+    },
+    {
+      "id": 9,
+      "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Delhi, India Gate",
+      "tags": ["delhi"],
+      "color": "#c4a882",
+      "h": "short"
+    },
+    {
+      "id": 10,
+      "src": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Rishikesh Ganga River",
+      "tags": ["rishikesh"],
+      "color": "#4a7a8a",
+      "h": "tall"
+    },
+    {
+      "id": 11,
+      "src": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Rishikesh Laxman Jhula",
+      "tags": ["rishikesh"],
+      "color": "#5a7a8a",
+      "h": "short"
+    },
+    {
+      "id": 12,
+      "src": "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&q=80",
+      "thumb": "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=400&q=80",
+      "author": "Rana Cab Traveler",
+      "location": "Badrinath Temple",
+      "tags": ["badrinath"],
+      "color": "#8a6a5a",
+      "h": "medium"
+    }
+  ]
+}

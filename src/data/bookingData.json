@@ -1,0 +1,26 @@
+{
+  "pickupOptions": [
+    { "value": "kotdwara", "label": "Kotdwara" },
+    { "value": "dehradun", "label": "Dehradun" },
+    { "value": "delhi", "label": "Delhi" }
+  ],
+  "destinationOptions": [
+    { "value": "mumbai", "label": "Mumbai" },
+    { "value": "jaipur", "label": "Jaipur" },
+    { "value": "haridwar", "label": "Haridwar" },
+    { "value": "rishikesh", "label": "Rishikesh" }
+  ],
+  "passengerOptions": [
+    { "value": "1", "label": "1 Person" },
+    { "value": "2", "label": "2 Persons" },
+    { "value": "3", "label": "3 Persons" },
+    { "value": "4", "label": "4 Persons" },
+    { "value": "5", "label": "5+ Persons" }
+  ],
+  "vehicleOptions": [
+    { "value": "swift_dzire", "label": "Swift Dzire" },
+    { "value": "toyota_glanza", "label": "Toyota Glanza" },
+    { "value": "ertiga", "label": "Maruti Suzuki Ertiga" },
+    { "value": "traveller", "label": "Traveller" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "quickLinks": [
+    { "name": "Home", "path": "/" },
+    { "name": "About Us", "path": "/contact-about" },
+    { "name": "Packages", "path": "/packages" },
+    { "name": "Contact", "path": "/contact-about" },
+    { "name": "Privacy Policy", "path": "/" }
+  ],
+  "serviceAreas": [
+    { "name": "Delhi to Kedarnath", "path": "/" },
+    { "name": "Dehradun to Badrinath", "path": "/" },
+    { "name": "Haridwar Taxi Service", "path": "/" },
+    { "name": "Rishikesh Taxi Service", "path": "/" },
+    { "name": "Kotdwara Taxi Service", "path": "/" }
+  ],
+  "contactInfo": [
+    {
+      "id": "address",
+      "value": "Haridwar Road, Rishikesh, Uttarakhand, India"
+    },
+    {
+      "id": "phone",
+      "value": "+91 98765 43210"
+    },
+    {
+      "id": "email",
+      "value": "booking@yatracabs.com"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Instagram",
+      "path": "https://instagram.com"
+    },
+    {
+      "name": "Facebook",
+      "path": "https://facebook.com"
+    },
+    {
+      "name": "X",
+      "path": "https://x.com"
+    }
+  ]
+}
