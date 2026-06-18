@@ -63,11 +63,6 @@ const socialIcons = {
       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
     </svg>
   ),
-  X: (
-    <svg width="22" height="22" fill="white" viewBox="0 0 24 24">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  ),
 };
 
 export default function Footer({ data = defaultFooterData }) {
@@ -87,11 +82,14 @@ export default function Footer({ data = defaultFooterData }) {
           {/* Main grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Col 1 — Brand */}
-            <div className="flex flex-col gap-5">
-              <Link href="/" className="text-[28px] font-bold text-white">
+            <div className="flex flex-col gap-4.5">
+              <Link
+                href="/"
+                className="text-xl lg:text-[28px] font-semibold leading-normal text-white"
+              >
                 Rana<span className="text-[#f5a800]">Taxi</span>
               </Link>
-              <p className="text-gray-400 text-sm leading-relaxed font-semibold max-w-[240px]">
+              <p className="text-text-light text-sm leading-noermal font-semibold max-w-[240px]">
                 Your trusted partner for safe and comfortable journeys across
                 the Himalayas
               </p>
@@ -114,13 +112,15 @@ export default function Footer({ data = defaultFooterData }) {
 
             {/* Col 2 — Quick Links */}
             <div className="flex flex-col gap-5">
-              <h3 className="text-white text-lg font-bold">Quick Links</h3>
+              <h3 className="text-white text-lg lg:text-xl font-semibold leading-normal">
+                Quick Links
+              </h3>
               <ul className="flex flex-col gap-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.path}
-                      className="text-gray-400 text-sm font-semibold hover:text-white transition-colors"
+                      className="text-text-light text-sm font-semibold leading-normal hover:text-white transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -131,13 +131,15 @@ export default function Footer({ data = defaultFooterData }) {
 
             {/* Col 3 — Service Areas */}
             <div className="flex flex-col gap-5">
-              <h3 className="text-white text-lg font-bold">Service Areas</h3>
+              <h3 className="text-white text-lg lg:text-xl font-semibold leading-normal">
+                Service Areas
+              </h3>
               <ul className="flex flex-col gap-3">
                 {serviceAreas.map((area) => (
                   <li key={area.name}>
                     <Link
                       href={area.path}
-                      className="text-gray-400 text-sm font-semibold hover:text-white transition-colors"
+                      className="text-text-light text-sm font-semibold leading-normal hover:text-white transition-colors"
                     >
                       {area.name}
                     </Link>
@@ -148,12 +150,16 @@ export default function Footer({ data = defaultFooterData }) {
 
             {/* Col 4 — Contact */}
             <div className="flex flex-col gap-5">
-              <h3 className="text-white text-lg font-bold">Contact</h3>
+              <h3 className="text-white text-lg lg:text-xl font-semibold leading-normal">
+                Contact
+              </h3>
               <ul className="flex flex-col gap-4">
                 {contactInfo.map((item) => (
                   <li key={item.id} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex-shrink-0">{contactIcons[item.id]}</span>
-                    <span className="text-gray-400 text-sm font-semibold leading-snug">
+                    <span className="mt-0.5 flex-shrink-0">
+                      {contactIcons[item.id]}
+                    </span>
+                    <span className="text-text-light text-sm font-semibold leading-normal">
                       {item.value}
                     </span>
                   </li>
@@ -166,7 +172,7 @@ export default function Footer({ data = defaultFooterData }) {
           <div className="w-full h-px bg-white/15 mt-12 mb-6" />
 
           {/* Copyright */}
-          <p className="text-gray-400 text-sm text-center">
+          <p className="text-text-light leading-normal text-sm text-center">
             © {currentYear} YatraCabs Taxi Service. All rights reserved.
           </p>
         </div>

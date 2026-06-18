@@ -31,9 +31,9 @@ export default function HeroSection({ data = defaultHeroData }) {
         className="object-cover -z-10"
       />
       <MaxWidthContainer>
-        <div className="w-full flex flex-col lg:flex-row justify-between items-center py-10 lg:py-18 gap-5 lg:gap-0  sm:px-6 lg:px-0">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center py-10 lg:py-18 gap-5 lg:gap-0 sm:px-6 lg:px-0">
           {/* LEFT */}
-          <div className="flex flex-col items-start gap-4 w-full lg:max-w-[481px]">
+          <div className="flex flex-col items-start max-lg:items-center gap-4 w-full lg:max-w-[520px]">
             {/* Badge */}
             <div className="flex items-center gap-2 px-2.5 py-1 lg:py-[7px] lg:px-[19px] bg-text-primary border border-primary w-fit rounded-[29px]">
               {/* Pulsing dot — replaces the static yellow_circle.svg */}
@@ -52,12 +52,10 @@ export default function HeroSection({ data = defaultHeroData }) {
 
             {/* Heading */}
             <div className="flex flex-col items-start gap-5 lg:gap-[41px] self-stretch">
-              <div className="top">
+              <div className="top max-lg:text-center">
                 <h1 className="text-[30px] lg:h1 font-bold leading-normal text-white">
                   {titlePart1}
-                  <br />
-                  {titlePart2}{" "}
-                  <span className="text-primary leading-normal inline-block text-left" style={{ whiteSpace: "pre-line" }}>
+                  <span className="text-primary leading-normal ">
                     {titleHighlight}
                   </span>
                 </h1>
@@ -92,8 +90,8 @@ export default function HeroSection({ data = defaultHeroData }) {
                   className="flex max-lg:justify-center items-end gap-1 bg-black hover:bg-text-secondary transition duration-300 text-white font-semibold px-4.75 py-3 rounded-lg border border-border backdrop-blur-sm"
                 >
                   <span className="w-6 h-6 aspect-square">
-                    <img 
-                      src="/icons/whatsapp_icon.svg" 
+                    <img
+                      src="/icons/whatsapp_icon.svg"
                       alt="whatsapp icon"
                       width={24}
                       height={24}

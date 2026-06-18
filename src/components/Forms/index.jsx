@@ -17,12 +17,12 @@ import SubmitModal from "@/components/PopModal/SubmitModal";
 // ============================================================
 const WHATSAPP_NUMBER = "917409199129";
 
-export default function BookingForm() {
+export default function BookingForm({ initialData = {} }) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    pickup: "",
-    destination: "",
+    pickup: (initialData.pickup || "").toLowerCase(),
+    destination: initialData.destination || "",
     travelDate: "",
     passengers: "1",
     vehicle: "",
@@ -93,7 +93,7 @@ export default function BookingForm() {
     // Opens WhatsApp chat in a new tab
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`,
-      "_blank"
+      "_blank",
     );
 
     // Switch popup state to the Thank You screen
@@ -184,7 +184,9 @@ export default function BookingForm() {
 
         {/* Name */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Name</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Name
+          </label>
           <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
             <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
               <img src="/icons/lucide_user.svg" alt="user icon" />
@@ -203,7 +205,9 @@ export default function BookingForm() {
 
         {/* Phone */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Phone</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Phone
+          </label>
           <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
             <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
               <img src="/icons/fluent_call-16-regular.svg" alt="phone icon" />
@@ -222,7 +226,9 @@ export default function BookingForm() {
 
         {/* Pickup */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Pickup</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Pickup
+          </label>
           <AnimatedSelect
             icon="/icons/basil_location-outline.svg"
             value={formData.pickup}
@@ -234,8 +240,10 @@ export default function BookingForm() {
 
         {/* Destination */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Destination</label>
-          
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Destination
+          </label>
+
           <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
             <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
               <img src="/icons/iconamoon_location-light.svg" alt="user icon" />
@@ -254,7 +262,9 @@ export default function BookingForm() {
 
         {/* Travel Date */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Travel Date</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Travel Date
+          </label>
           <div className="flex items-center gap-1.25 lg:gap-2.5 p-2.5 lg:py-4 lg:px-5.25 rounded-lg self-stretch border border-border">
             <span className="w-4 h-4 lg:w-6 lg:h-6 aspect-square">
               <img src="/icons/uiw_date.svg" alt="calendar icon" />
@@ -272,7 +282,9 @@ export default function BookingForm() {
 
         {/* Passengers */}
         <div className="flex flex-col">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Passengers</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Passengers
+          </label>
           <AnimatedSelect
             icon="/icons/lucide_user.svg"
             value={formData.passengers}
@@ -284,13 +296,16 @@ export default function BookingForm() {
 
         {/* Choose Vehicle */}
         <div className="flex flex-col sm:col-span-2">
-          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">Choose Vehicle</label>
+          <label className="text-text-secondary max-lg:text-sm leading-normal mb-1.25">
+            Choose Vehicle
+          </label>
           <AnimatedSelect
             icon="/icons/car.svg"
             value={formData.vehicle}
             onChange={(val) => handleSelectChange("vehicle", val)}
             options={vehicleOptions}
             placeholder="Select Vehicle"
+            openDirection="up"
           />
         </div>
 
@@ -329,7 +344,13 @@ export default function BookingForm() {
           >
             {status === "loading" ? (
               <>
-                <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  className="animate-spin w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                 </svg>
                 Sending...

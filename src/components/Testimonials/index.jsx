@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import defaultTestimonials from "@/data/testimonialsData.json";
 
-
 function StarRating({ rating }) {
   return (
     <div className="flex items-center gap-1">

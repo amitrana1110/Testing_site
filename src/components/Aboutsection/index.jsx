@@ -38,7 +38,10 @@ export default function AboutSection({ data = defaultAboutData }) {
           </div>
 
           {paragraphs.map((para, idx) => (
-            <p key={idx} className="text-text-secondary text-sm lg:text-xl leading-normal">
+            <p
+              key={idx}
+              className="text-text-secondary text-sm lg:text-xl leading-normal"
+            >
               {para}
             </p>
           ))}

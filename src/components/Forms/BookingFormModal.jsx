@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import BookingForm from ".";
 
-export default function BookingFormModal({ isOpen, onClose }) {
+export default function BookingFormModal({ isOpen, onClose, initialData }) {
   useEffect(() => {
     // Don't lock body scroll — let the overlay handle scrolling
     return () => {
@@ -24,7 +24,6 @@ export default function BookingFormModal({ isOpen, onClose }) {
       {/* Outer overlay — THIS scrolls, not the inner modal */}
       <div className="fixed inset-0 z-50 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
-          
           {/* Modal card — NO max-h, NO overflow */}
           <div
             className="relative w-full max-w-[800px] bg-white rounded-2xl border border-border shadow-2xl flex flex-col my-4"
@@ -64,7 +63,7 @@ export default function BookingFormModal({ isOpen, onClose }) {
 
             {/* Form body — NO overflow-y-auto here */}
             <div className="p-5 lg:p-6">
-              <BookingForm />
+              <BookingForm initialData={initialData} />
             </div>
 
             {/* Dismiss */}

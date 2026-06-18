@@ -208,20 +208,38 @@ export default function PackageCard({ pkg }) {
                 Book {temples.length} Dham Yatra
               </button>
 
-              <button
-                type="button"
+              {/* Desktop link — Opens in a new tab */}
+              <a
+                href="/assets/RanaTaxiService_Brochure_v2.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-                  w-full px-4.75 py-3 lg:py-5.5 rounded-xl
-                  font-bold leading-normal
+                  hidden md:block w-full px-4.75 py-3 lg:py-5.5 rounded-xl
+                  font-bold leading-normal text-center
+                  border-2 border-gray-900 bg-transparent text-text-primary
+                  transition-all duration-200
+                  hover:bg-gray-700 hover:text-white hover:-translate-y-0.5
+                  active:scale-[0.98]
+                "
+              >
+                Download Brochure
+              </a>
+
+              {/* Mobile link — Triggers download */}
+              <a
+                href="/assets/RanaTaxiService_Brochure_v2.pdf"
+                download="RanaTaxiService_Brochure.pdf"
+                className="
+                  block md:hidden w-full px-4.75 py-3 lg:py-5.5 rounded-xl
+                  font-bold leading-normal text-center
                   border-2 border-gray-900 bg-transparent text-text-primary
                   transition-all duration-200
                   hover:bg-gray-700 hover:text-white hover:-translate-y-0.5
                   active:scale-[0.98] max-lg:mb-2
-                  
                 "
               >
                 Download Brochure
-              </button>
+              </a>
             </div>
           </div>
         </div>

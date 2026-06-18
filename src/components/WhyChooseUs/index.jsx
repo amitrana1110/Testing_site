@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import defaultFeatures from "@/data/whyChooseUsData.json";
 
-
 function FeatureCard({ feature }) {
   return (
     <div className="flex h-full py-8 px-4 flex-col items-start gap-3.5 shrink-0 border border-border bg-background rounded-2xl">

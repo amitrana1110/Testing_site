@@ -8,7 +8,7 @@
       "id": "custom",
       "label": "Custom Packages",
       "variant": "primary",
-      "href": "/packages"
+      "href": "/packages#custom-yatra-form"
     },
     {
       "id": "call",

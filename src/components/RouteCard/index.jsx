@@ -12,7 +12,6 @@ import "swiper/css/navigation";
 
 import defaultRoutes from "@/data/routeData.json";
 
-
 /* ── Swiper Card ── */
 function RouteCard({ route }) {
   return (
@@ -40,7 +39,7 @@ function RouteCard({ route }) {
 }
 
 /* ── All Routes Table Row ── */
-function RouteRow({route, onBookNow}) {
+function RouteRow({ route, onBookNow }) {
   return (
     <div
       className="group flex flex-col gap-2 p-5 bg-white rounded-2xl border border-border text-center h-full
@@ -50,7 +49,12 @@ function RouteRow({route, onBookNow}) {
       <div className="flex gap-4 items-center">
         {/* Icon circle */}
         <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-          <img src="/icons/location.svg" alt="location icon" width={20} height={20} />
+          <img
+            src="/icons/location.svg"
+            alt="location icon"
+            width={20}
+            height={20}
+          />
         </div>
 
         {/* Route title */}
@@ -188,179 +192,197 @@ function RouteRow({route, onBookNow}) {
 export default function PopularRoutes({ routes = defaultRoutes }) {
   const [showAll, setShowAll] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
+  const [selectedRoute, setSelectedRoute] = useState(null);
   const swiperRef = useRef(null);
+
+  const handleBookNow = (route) => {
+    setSelectedRoute(route);
+    setShowBookingModal(true);
+  };
 
   return (
     <>
-    <section className="w-full bg-background py-14">
-      <MaxWidthContainer className="px-0!">
-        <div className="">
-          {/* Header row */}
-          <div className="flex items-start justify-between px-4 mb-4">
-            <div className="flex flex-col gap-2 w-full">
-              <div className="flex justify-between">
-                <h2 className="text-text-primary h2 lg:text-[36px] font-bold leading-normal">
-                  Popular Routes
-                </h2>
-                <button
-                  onClick={() => setShowAll((prev) => !prev)}
-                  className="lg:hidden flex items-center gap-1 text-text-primary hover:text-text-secondary transition duration-300 text-sm lg:text-[20px] font-semibold cursor-pointer whitespace-nowrap"
-                >
-                  {showAll ? (
-                    <>
-                      <img
-                        src="/icons/glyphs_arrow-bold.svg"
-                        alt="arrow"
-                        className="w-5 h-5 rotate-180"
-                        width={20}
-                        height={20}
-                      />
-                      Show Less
-                    </>
-                  ) : (
-                    <>
-                      All Routes
-                      <img
-                        src="/icons/glyphs_arrow-bold.svg"
-                        alt="arrow"
-                        className="w-5 h-5"
-                        width={20}
-                        height={20}
-                      />
-                    </>
-                  )}
-                </button>
-              </div>
+      <section className="w-full bg-background py-14">
+        <MaxWidthContainer className="px-0!">
+          <div className="">
+            {/* Header row */}
+            <div className="flex items-start justify-between px-4 mb-4">
+              <div className="flex flex-col gap-2 w-full">
+                <div className="flex justify-between">
+                  <h2 className="text-text-primary h2 lg:text-[36px] font-bold leading-normal">
+                    Popular Routes
+                  </h2>
+                  <button
+                    onClick={() => setShowAll((prev) => !prev)}
+                    className="lg:hidden flex items-center gap-1 text-text-primary hover:text-text-secondary transition duration-300 text-sm lg:text-[20px] font-semibold cursor-pointer whitespace-nowrap"
+                  >
+                    {showAll ? (
+                      <>
+                        <img
+                          src="/icons/glyphs_arrow-bold.svg"
+                          alt="arrow"
+                          className="w-5 h-5 rotate-180"
+                          width={20}
+                          height={20}
+                        />
+                        Show Less
+                      </>
+                    ) : (
+                      <>
+                        All Routes
+                        <img
+                          src="/icons/glyphs_arrow-bold.svg"
+                          alt="arrow"
+                          className="w-5 h-5"
+                          width={20}
+                          height={20}
+                        />
+                      </>
+                    )}
+                  </button>
+                </div>
 
-              <div className="flex items-center w-full justify-between">
-                <p className="text-text-secondary text-sm lg:text-[20px] leading-normal">
-                  Most frequented destinations by our travelers
-                </p>
-                <button
-                  onClick={() => setShowAll((prev) => !prev)}
-                  className="max-lg:hidden flex items-center gap-1 text-text-primary hover:text-text-secondary transition duration-300 text-sm lg:text-[20px] font-semibold cursor-pointer whitespace-nowrap"
-                >
-                  {showAll ? (
-                    <>
-                      <img
-                        src="/icons/glyphs_arrow-bold.svg"
-                        alt="arrow"
-                        className="w-5 h-5 rotate-180"
-                        width={20}
-                        height={20}
-                      />
-                      Show Less
-                    </>
-                  ) : (
-                    <>
-                      View All Routes
-                      <img
-                        src="/icons/glyphs_arrow-bold.svg"
-                        alt="arrow"
-                        className="w-5 h-5"
-                        width={20}
-                        height={20}
-                      />
-                    </>
-                  )}
-                </button>
+                <div className="flex items-center w-full justify-between">
+                  <p className="text-text-secondary text-sm lg:text-[20px] leading-normal">
+                    Most frequented destinations by our travelers
+                  </p>
+                  <button
+                    onClick={() => setShowAll((prev) => !prev)}
+                    className="max-lg:hidden flex items-center gap-1 text-text-primary hover:text-text-secondary transition duration-300 text-sm lg:text-[20px] font-semibold cursor-pointer whitespace-nowrap"
+                  >
+                    {showAll ? (
+                      <>
+                        <img
+                          src="/icons/glyphs_arrow-bold.svg"
+                          alt="arrow"
+                          className="w-5 h-5 rotate-180"
+                          width={20}
+                          height={20}
+                        />
+                        Show Less
+                      </>
+                    ) : (
+                      <>
+                        View All Routes
+                        <img
+                          src="/icons/glyphs_arrow-bold.svg"
+                          alt="arrow"
+                          className="w-5 h-5"
+                          width={20}
+                          height={20}
+                        />
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* SWIPER */}
-          {/* CHANGE: overflow-x-clip stops page scroll, overflow visible on Swiper shows right padding */}
-          {!showAll && (
-            <div className="mt-6 overflow-x-clip">
-              <Swiper
-                modules={[Pagination]}
-                spaceBetween={20}
-                slidesPerView={1.2}
-                pagination={{ clickable: true }}
-                onSwiper={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                breakpoints={{
-                  480: { slidesPerView: 1.5, spaceBetween: 10 },
-                  640: { slidesPerView: 2.2, spaceBetween: 10 },
-                  1024: { slidesPerView: 4, spaceBetween: 20 },
-                }}
-                // CHANGE: removed wrapperClass — use style padding instead so
-                // Swiper's own layout engine respects left AND right spacing
-                style={{
-                  overflow: "visible",
-                  paddingLeft: "16px",
-                  paddingRight: "16px",
-                }}
-                // CHANGE: centeredSlidesBounds makes last card stop in center
-                // instead of sticking to the right edge of the screen
-                centeredSlidesBounds={true}
-                className="pb-14!"
-              >
+            {/* SWIPER */}
+            {/* CHANGE: overflow-x-clip stops page scroll, overflow visible on Swiper shows right padding */}
+            {!showAll && (
+              <div className="mt-6 overflow-x-clip">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={20}
+                  slidesPerView={1.2}
+                  pagination={{ clickable: true }}
+                  onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  breakpoints={{
+                    480: { slidesPerView: 1.5, spaceBetween: 10 },
+                    640: { slidesPerView: 2.2, spaceBetween: 10 },
+                    1024: { slidesPerView: 4, spaceBetween: 20 },
+                  }}
+                  // CHANGE: removed wrapperClass — use style padding instead so
+                  // Swiper's own layout engine respects left AND right spacing
+                  style={{
+                    overflow: "visible",
+                    paddingLeft: "16px",
+                    paddingRight: "16px",
+                  }}
+                  // CHANGE: centeredSlidesBounds makes last card stop in center
+                  // instead of sticking to the right edge of the screen
+                  centeredSlidesBounds={true}
+                  className="pb-14!"
+                >
+                  {routes.map((route) => (
+                    <SwiperSlide key={route.id}>
+                      <div className="" onClick={() => setShowAll(true)}>
+                        <RouteCard route={route} />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Both nav buttons on the left, same line as pagination bullets */}
+                <div className="max-lg:hidden flex items-center gap-2 px-4 -mt-9">
+                  {/* Prev */}
+                  <button
+                    onClick={() => swiperRef.current?.slidePrev()}
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
+                    aria-label="Previous"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+                  {/* Next */}
+                  <button
+                    onClick={() => swiperRef.current?.slideNext()}
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
+                    aria-label="Next"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* ALL ROUTES LIST */}
+            {showAll && (
+              <div className=" px-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {routes.map((route) => (
-                  <SwiperSlide key={route.id}>
-                    <div className="" onClick={() => setShowAll(true)}>
-                      <RouteCard route={route} />
-                    </div>
-                  </SwiperSlide>
+                  <RouteRow
+                    key={route.id}
+                    route={route}
+                    onBookNow={() => handleBookNow(route)}
+                  />
                 ))}
-              </Swiper>
-
-              {/* Both nav buttons on the left, same line as pagination bullets */}
-              <div className="max-lg:hidden flex items-center gap-2 px-4 -mt-9">
-                {/* Prev */}
-                <button
-                  onClick={() => swiperRef.current?.slidePrev()}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
-                  aria-label="Previous"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                </button>
-                {/* Next */}
-                <button
-                  onClick={() => swiperRef.current?.slideNext()}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
-                  aria-label="Next"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
               </div>
-            </div>
-          )}
-
-          {/* ALL ROUTES LIST */}
-          {showAll && (
-            <div className=" px-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {routes.map((route) => (
-                <RouteRow key={route.id} route={route}  onBookNow={() => setShowBookingModal(true)} />
-              ))}
-            </div>
-          )}
-        </div>
-      </MaxWidthContainer>
-    </section>
-     <BookingFormModal
+            )}
+          </div>
+        </MaxWidthContainer>
+      </section>
+      <BookingFormModal
         isOpen={showBookingModal}
-        onClose={() => setShowBookingModal(false)}
+        onClose={() => {
+          setShowBookingModal(false);
+          setSelectedRoute(null);
+        }}
+        initialData={
+          selectedRoute
+            ? { pickup: selectedRoute.from, destination: selectedRoute.to }
+            : null
+        }
       />
-      </>
+    </>
   );
 }

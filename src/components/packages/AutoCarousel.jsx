@@ -15,7 +15,11 @@ import Image from "next/image";
  *
  * @param {{ images: Array<{src: string, alt: string}>, badge?: string, intervalSeconds?: number }} props
  */
-export default function AutoCarousel({ images = [], badge, intervalSeconds = 4 }) {
+export default function AutoCarousel({
+  images = [],
+  badge,
+  intervalSeconds = 4,
+}) {
   if (!images.length) return null;
   const count = images.length;
   const totalDuration = count * intervalSeconds; // 16s for 4 slides @ 4s each

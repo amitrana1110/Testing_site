@@ -33,7 +33,7 @@ export async function POST(req) {
       console.warn("Spam Bot blocked via honeypot field validation.");
       return Response.json(
         { success: false, message: "Request flagged as spam." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -41,18 +41,29 @@ export async function POST(req) {
     if (!name || !phone || !pickup || !destination || !travelDate) {
       return Response.json(
         { success: false, message: "Please fill in all required fields." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // ANTIGRAVITY CHANGE: Added validation for environment variables to check if mailer is properly configured.
     // The original .env file was located in `src/components/Forms/.env`, which Next.js doesn't load automatically.
     // Moving the environment variables to the project root in `.env.local` fixes the issue.
-    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_TO) {
-      console.error("Nodemailer Error: Missing mailer environment variables in process.env. Please make sure .env.local is at the root of the project.");
+    if (
+      !process.env.EMAIL_HOST ||
+      !process.env.EMAIL_USER ||
+      !process.env.EMAIL_PASS ||
+      !process.env.EMAIL_TO
+    ) {
+      console.error(
+        "Nodemailer Error: Missing mailer environment variables in process.env. Please make sure .env.local is at the root of the project.",
+      );
       return Response.json(
-        { success: false, message: "Mailer configuration error. Please contact the administrator." },
-        { status: 500 }
+        {
+          success: false,
+          message:
+            "Mailer configuration error. Please contact the administrator.",
+        },
+        { status: 500 },
       );
     }
 
@@ -150,12 +161,11 @@ export async function POST(req) {
       success: true,
       message: "Booking sent successfully!",
     });
-
   } catch (error) {
     console.error("Nodemailer error:", error);
     return Response.json(
       { success: false, message: "Failed to send booking. Please try again." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

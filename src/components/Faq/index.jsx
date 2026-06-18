@@ -5,7 +5,6 @@ import MaxWidthContainer from "../Common/MaxWidthContainer";
 
 import defaultFaqs from "@/data/faqData.json";
 
-
 function FAQItem({ faq, isOpen, onToggle }) {
   return (
     <div className="bg-white border border-border rounded-lg overflow-hidden ">

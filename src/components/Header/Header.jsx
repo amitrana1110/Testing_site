@@ -46,7 +46,10 @@ function Header({ items = defaultNavItems }) {
             </ul>
 
             {/* Call Now Button */}
-            <button className="flex items-center gap-2 bg-black text-white text-[15px] font-semibold px-5 py-3 rounded-xl hover:bg-gray-800 transition-colors">
+            <a
+              href="tel:+919528615204"
+              className="flex items-center gap-2 bg-black text-white text-[15px] font-semibold px-5 py-3 rounded-xl hover:bg-gray-800 transition-colors"
+            >
               <span className="w-6 h-6 aspect-square">
                 <img
                   src="/icons/fluent_call-32-call.svg"
@@ -56,7 +59,7 @@ function Header({ items = defaultNavItems }) {
                 />
               </span>
               <span>Call Now</span>
-            </button>
+            </a>
           </nav>
 
           {/* Hamburger — mobile only */}
@@ -86,9 +89,7 @@ function Header({ items = defaultNavItems }) {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen
-              ? "max-h-80 border-t border-gray-100"
-              : "max-h-0"
+            menuOpen ? "max-h-80 border-t border-gray-100" : "max-h-0"
           }`}
         >
           <ul className="flex flex-col px-6 py-4 gap-4">
@@ -110,7 +111,10 @@ function Header({ items = defaultNavItems }) {
 
             {/* Call Now — mobile */}
             <li>
-              <button className="mt-2 w-full flex items-center justify-center gap-2 bg-black text-white font-semibold px-5 py-3 rounded-xl">
+              <a
+                href="tel:+919528615204"
+                className="mt-2 w-full flex items-center justify-center gap-2 bg-black text-white font-semibold px-5 py-3 rounded-xl"
+              >
                 <span className="w-6 h-6 aspect-square">
                   <img
                     src="/icons/fluent_call-32-call.svg"
@@ -120,7 +124,7 @@ function Header({ items = defaultNavItems }) {
                   />
                 </span>
                 <span>Call Now</span>
-              </button>
+              </a>
             </li>
           </ul>
         </div>

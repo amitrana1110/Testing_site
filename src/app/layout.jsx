@@ -15,8 +15,14 @@ const poppins = Poppins({
 // ANTIGRAVITY CHANGE: Added SEO Metadata to enable page titles and descriptions in search results
 export const metadata = {
   title: "Rana Taxi Services Kotdwara | Cab Booking in Dehradun & Delhi",
-  description: "Book reliable, safe, and affordable taxi services from Kotdwara, Rishikesh, Dehradun, and Delhi. Special tour packages for Kedarnath and Badrinath Char Dham Yatra.",
-  keywords: ["taxi service Kotdwara", "cab Rishikesh", "Kedarnath taxi package", "Dehradun to Delhi cab"],
+  description:
+    "Book reliable, safe, and affordable taxi services from Kotdwara, Rishikesh, Dehradun, and Delhi. Special tour packages for Kedarnath and Badrinath Char Dham Yatra.",
+  keywords: [
+    "taxi service Kotdwara",
+    "cab Rishikesh",
+    "Kedarnath taxi package",
+    "Dehradun to Delhi cab",
+  ],
 };
 
 export default function RootLayout({ children }) {

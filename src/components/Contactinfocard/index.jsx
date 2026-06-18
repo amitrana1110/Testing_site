@@ -1,4 +1,3 @@
-
 import MaxWidthContainer from "../Common/MaxWidthContainer";
 import defaultCards from "@/data/contactInfoCardsData.json";
 

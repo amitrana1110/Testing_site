@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "/icons/whychoose/tick_about.svg",
+    "title": "Safe Travel",
+    "description": "Sanitized cars and tracked journeys for your complete peace of mind."
+  },
+  {
+    "icon": "/icons/whychoose/user_tick_about.svg",
+    "title": "Expert Drivers",
+    "description": "Licensed drivers with extensive experience in hill driving conditions."
+  },
+  {
+    "icon": "/icons/whychoose/wallet_about.svg",
+    "title": "Affordable Pricing",
+    "description": "Transparent billing with no hidden charges. Best value"
+  },
+  {
+    "icon": "/icons/whychoose/Call_support_about.svg",
+    "title": "24/7 Support",
+    "description": "Round-the-clock assistance for bookings and on-road support."
+  }
+]

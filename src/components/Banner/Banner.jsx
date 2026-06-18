@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import MaxWidthContainer from "../Common/MaxWidthContainer";
 import defaultBannerData from "@/data/bannerData.json";
@@ -31,6 +33,7 @@ const buttonIcons = {
       />
     </svg>
   ),
+  whatsapp: <img src="/icons/whatsapp_icon.svg" alt="" />,
 };
 
 export default function Banner({ data = defaultBannerData }) {
@@ -79,21 +82,47 @@ export default function Banner({ data = defaultBannerData }) {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
-            {buttons.map((btn) => (
-              <a
-                key={btn.id}
-                href={btn.href}
-                className={`flex items-center gap-1 px-4.75 py-3 rounded-xl text-base font-bold leading-normal transition-all duration-200
-                  ${
-                    btn.variant === "primary"
-                      ? "bg-primary text-text-primary hover:bg-primary-hover"
-                      : "bg-black text-white border border-white/80 hover:bg-text-secondary"
-                  }`}
-              >
-                <span className="w-6 h-6">{buttonIcons[btn.id]}</span>
-                {btn.label}
-              </a>
-            ))}
+            {buttons.map((btn) => {
+              const href = btn.whatsappLink || btn.href;
+              const label = btn.whatsappText || btn.label;
+              const iconKey = (btn.id || "").toLowerCase();
+
+              const handleSmoothScroll = (e) => {
+                if (iconKey === "custom") {
+                  const target = document.getElementById("custom-yatra-form");
+                  if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }
+              };
+
+              return (
+                <a
+                  key={btn.id}
+                  href={href}
+                  onClick={handleSmoothScroll}
+                  target={iconKey === "whatsapp" ? "_blank" : undefined}
+                  rel={
+                    iconKey === "whatsapp" ? "noopener noreferrer" : undefined
+                  }
+                  className={`flex items-center gap-1 px-4.75 py-3 rounded-xl text-base font-bold leading-normal transition-all duration-200
+                    ${
+                      btn.variant === "primary"
+                        ? "bg-primary text-text-primary hover:bg-primary-hover"
+                        : "bg-black text-white border border-white/80 hover:bg-text-secondary"
+                    }`}
+                >
+                  <span className="w-6 h-6 flex items-center justify-center">
+                    {buttonIcons[iconKey]}
+                  </span>
+                  {label}
+                </a>
+              );
+            })}
           </div>
         </div>
       </MaxWidthContainer>

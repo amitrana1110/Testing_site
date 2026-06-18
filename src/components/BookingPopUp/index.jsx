@@ -17,12 +17,20 @@ export default function BookingPopup() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 5000);
-    return () => clearTimeout(timer);
+    if (typeof window !== "undefined") {
+      const isDismissed = sessionStorage.getItem("booking_popup_dismissed");
+      if (!isDismissed) {
+        const timer = setTimeout(() => setVisible(true), 5000);
+        return () => clearTimeout(timer);
+      }
+    }
   }, []);
 
   function close() {
     setVisible(false);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("booking_popup_dismissed", "true");
+    }
   }
 
   if (!visible) return null;
@@ -95,7 +103,7 @@ export default function BookingPopup() {
                 className="flex items-center gap-2 text-text-secondary max-lg:text-sm leading-normal"
               >
                 <span>
-                  <img src="/icons/green_Tick.svg" alt="" />
+                  <img src="/icons/green_tick.svg" alt="" />
                 </span>
                 {feature}
               </li>

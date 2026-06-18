@@ -21,6 +21,7 @@ export default function AnimatedSelect({
   onChange,
   options = [],
   placeholder = "Select",
+  openDirection = "down",
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -72,10 +73,14 @@ export default function AnimatedSelect({
 
       {/* Options panel */}
       <div
-        className={`absolute left-0 right-0 top-full mt-1.5 z-30 origin-top transition-all duration-300 ease-in-out ${
+        className={`absolute left-0 right-0 z-30 transition-all duration-300 ease-in-out ${
+          openDirection === "up"
+            ? "bottom-full mb-1.5 origin-bottom"
+            : "top-full mt-1.5 origin-top"
+        } ${
           open
             ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 scale-y-95 -translate-y-1 pointer-events-none"
+            : `opacity-0 scale-y-95 ${openDirection === "up" ? "translate-y-1" : "-translate-y-1"} pointer-events-none`
         }`}
       >
         <ul className="max-h-60 overflow-y-auto rounded-lg border border-border bg-white shadow-lg py-1.5">
