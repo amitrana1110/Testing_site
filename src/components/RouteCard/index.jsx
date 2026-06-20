@@ -5,11 +5,11 @@ import Image from "next/image";
 import MaxWidthContainer from "../Common/MaxWidthContainer";
 import BookingFormModal from "@/components/Forms/BookingFormModal";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import ScrollReveal from "../Common/ScrollReveal";
 import defaultRoutes from "@/data/routeData.json";
 
 /* ── Swiper Card ── */
@@ -42,7 +42,7 @@ function RouteCard({ route }) {
 function RouteRow({ route, onBookNow }) {
   return (
     <div
-      className="group flex flex-col gap-2 p-5 bg-white rounded-2xl border border-border text-center h-full
+      className="group flex flex-col gap-2 p-5 bg-surface rounded-2xl border border-border text-center h-full
                     transition-all duration-300 ease-in-out
                     hover:-translate-y-2 hover:shadow-xl cursor-pointer"
     >
@@ -74,7 +74,6 @@ function RouteRow({ route, onBookNow }) {
         <div className="absolute inset-0 bg-border" />
 
         {/* Taxi icon — hidden by default, runs left to right on card hover */}
-        {/* translate-x-[-100%] starts it off-screen left, group-hover moves it to off-screen right */}
         <div
           className="absolute top-1/2 left-4 -translate-y-1/2
                         opacity-0 group-hover:opacity-100
@@ -206,7 +205,7 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
         <MaxWidthContainer className="px-0!">
           <div className="">
             {/* Header row */}
-            <div className="flex items-start justify-between px-4 mb-4">
+            <ScrollReveal direction="up" className="flex items-start justify-between px-4 mb-4">
               <div className="flex flex-col gap-2 w-full">
                 <div className="flex justify-between">
                   <h2 className="text-text-primary h2 lg:text-[36px] font-bold leading-normal">
@@ -276,12 +275,11 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
                   </button>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* SWIPER */}
-            {/* CHANGE: overflow-x-clip stops page scroll, overflow visible on Swiper shows right padding */}
             {!showAll && (
-              <div className="mt-6 overflow-x-clip">
+              <ScrollReveal direction="up" className="mt-6 overflow-x-clip">
                 <Swiper
                   modules={[Pagination]}
                   spaceBetween={20}
@@ -295,15 +293,11 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
                     640: { slidesPerView: 2.2, spaceBetween: 10 },
                     1024: { slidesPerView: 4, spaceBetween: 20 },
                   }}
-                  // CHANGE: removed wrapperClass — use style padding instead so
-                  // Swiper's own layout engine respects left AND right spacing
                   style={{
                     overflow: "visible",
                     paddingLeft: "16px",
                     paddingRight: "16px",
                   }}
-                  // CHANGE: centeredSlidesBounds makes last card stop in center
-                  // instead of sticking to the right edge of the screen
                   centeredSlidesBounds={true}
                   className="pb-14!"
                 >
@@ -321,7 +315,7 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
                   {/* Prev */}
                   <button
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-surface shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
                     aria-label="Previous"
                   >
                     <svg
@@ -338,7 +332,7 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
                   {/* Next */}
                   <button
                     onClick={() => swiperRef.current?.slideNext()}
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-white shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-surface shadow-sm hover:bg-primary transition-colors cursor-pointer z-10"
                     aria-label="Next"
                   >
                     <svg
@@ -353,18 +347,19 @@ export default function PopularRoutes({ routes = defaultRoutes }) {
                     </svg>
                   </button>
                 </div>
-              </div>
+              </ScrollReveal>
             )}
 
             {/* ALL ROUTES LIST */}
             {showAll && (
-              <div className=" px-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {routes.map((route) => (
-                  <RouteRow
-                    key={route.id}
-                    route={route}
-                    onBookNow={() => handleBookNow(route)}
-                  />
+              <div className="px-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+                {routes.map((route, index) => (
+                  <ScrollReveal key={route.id} delay={(index % 3) * 150} direction="up">
+                    <RouteRow
+                      route={route}
+                      onBookNow={() => handleBookNow(route)}
+                    />
+                  </ScrollReveal>
                 ))}
               </div>
             )}

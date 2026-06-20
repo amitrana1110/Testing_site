@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import TicketDetailsView from "./TicketDetailsView";
 import ThankYouView from "./ThankYouView";
 
@@ -12,6 +14,12 @@ export default function SubmitModal({
   setIsSubmittedOnWhatsApp,
   type = "booking",
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   if (!showPopup || !submittedData) return null;
 
   const handleCloseOrDismiss = () => {
@@ -26,14 +34,14 @@ export default function SubmitModal({
 
   // Conditional styling depending on which popup screen is active
   const backdropClasses = !isSubmittedOnWhatsApp
-    ? "fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm overflow-hidden"
-    : "fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm overflow-hidden p-4";
+    ? "fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm overflow-hidden"
+    : "fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm overflow-hidden p-4";
 
   const containerClasses = !isSubmittedOnWhatsApp
-    ? "relative w-full max-w-[600px] h-full sm:h-[90vh] sm:max-h-[750px]  bg-white rounded-none sm:rounded-3xl border border-gray-100 shadow-2xl p-5 sm:p-8 flex flex-col justify-center items-center text-center z-10 animate-in fade-in zoom-in-95 duration-200"
-    : "relative w-full max-w-[480px] h-80 lg:h-100 overflow-hidden bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-2xl p-6 sm:p-8 flex flex-col justify-center items-center text-center z-10 animate-in fade-in zoom-in-95 duration-200";
+    ? "relative w-full max-w-[600px] h-full sm:h-[90vh] sm:max-h-[750px] bg-surface rounded-none sm:rounded-3xl border border-border shadow-2xl p-5 sm:p-8 flex flex-col justify-center items-center text-center z-10 animate-in fade-in zoom-in-95 duration-200"
+    : "relative w-full max-w-[480px] h-80 lg:h-100 overflow-hidden bg-surface rounded-2xl sm:rounded-3xl border border-border shadow-2xl p-6 sm:p-8 flex flex-col justify-center items-center text-center z-10 animate-in fade-in zoom-in-95 duration-200";
 
-  return (
+  const modalContent = (
     <div className={backdropClasses}>
       {/* Modal Backdrop click */}
       <div className="absolute inset-0" onClick={handleCloseOrDismiss} />
@@ -43,7 +51,7 @@ export default function SubmitModal({
         <button
           type="button"
           onClick={handleCloseOrDismiss}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-150 text-gray-500 z-20"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-background hover:bg-divider transition-colors duration-150 text-text-secondary z-20 cursor-pointer"
           aria-label="Close popup"
         >
           <svg
@@ -76,4 +84,6 @@ export default function SubmitModal({
       </div>
     </div>
   );
+
+  return mounted ? createPortal(modalContent, document.body) : null;
 }

@@ -9,6 +9,7 @@ This document lists all the critical fixes, performance optimizations, responsiv
 - **Mailer Env Configuration Fix:** Moved SMTP credentials from `src/components/Forms/.env` to the project root in `.env.local`. Next.js only loads env files from the project root; subfolder env files were ignored, leaving `process.env.EMAIL_HOST` undefined.
 - **Server-side Validation:** Added check statements in [route.js](file:///c:/Users/AmitSinghRana/Pictures/taxi-service-main-main/taxi-service-main/src/app/api/booking/route.js#L29-L40) to log setup errors if env variables are missing.
 - **Form Field Validation:** Modified the "Book Now" submit button to stay disabled until all required inputs (`Name`, `Phone`, `Pickup`, `Destination`, `Travel Date`) are entered.
+- **10-Digit Phone Length Validation:** Added client-side validation check in Booking, Custom Yatra, and Contact forms to ensure entered phone numbers contain at least 10 digits before starting dispatch loaders, displaying an error message if invalid.
 
 ---
 

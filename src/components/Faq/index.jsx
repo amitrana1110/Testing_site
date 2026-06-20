@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import MaxWidthContainer from "../Common/MaxWidthContainer";
-
+import ScrollReveal from "../Common/ScrollReveal";
 import defaultFaqs from "@/data/faqData.json";
 
 function FAQItem({ faq, isOpen, onToggle }) {
   return (
-    <div className="bg-white border border-border rounded-lg overflow-hidden ">
+    <div className="bg-surface border border-border rounded-lg overflow-hidden ">
       {/* Question row */}
       <button
         onClick={onToggle}
@@ -59,19 +59,22 @@ export default function FAQ({ faqs = defaultFaqs }) {
       <MaxWidthContainer>
         <div className="flex flex-col items-center ">
           {/* Heading */}
-          <h2 className="text-text-primary text-[28px] lg:text-[36px] font-semibold leading-normal text-center mb-5 lg:mb-10 w-full ">
-            Frequently Asked Questions
-          </h2>
+          <ScrollReveal direction="up">
+            <h2 className="text-text-primary text-[28px] lg:text-[36px] font-semibold leading-normal text-center mb-5 lg:mb-10 w-full ">
+              Frequently Asked Questions
+            </h2>
+          </ScrollReveal>
 
           {/* FAQ list */}
           <div className="flex flex-col gap-2 w-full max-w-200">
-            {faqs.map((faq) => (
-              <FAQItem
-                key={faq.id}
-                faq={faq}
-                isOpen={openId === faq.id}
-                onToggle={() => handleToggle(faq.id)}
-              />
+            {faqs.map((faq, index) => (
+              <ScrollReveal key={faq.id} delay={index * 100} direction="up">
+                <FAQItem
+                  faq={faq}
+                  isOpen={openId === faq.id}
+                  onToggle={() => handleToggle(faq.id)}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>

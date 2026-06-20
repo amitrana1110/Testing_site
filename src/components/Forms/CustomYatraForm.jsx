@@ -43,7 +43,7 @@ export default function CustomYatraForm() {
 
   const isFormComplete =
     form.name.trim() !== "" &&
-    form.phone.trim() !== "" &&
+    form.phone.replace(/\D/g, "").length >= 10 &&
     form.pickup.trim() !== "" &&
     form.travelDate.trim() !== "" &&
     form.days.toString().trim() !== "" &&
@@ -91,6 +91,14 @@ export default function CustomYatraForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    const digits = form.phone.replace(/\D/g, "");
+    if (digits.length < 10) {
+      setStatus("error");
+      setMessage("Phone number must be at least 10 digits.");
+      return;
+    }
+
     setStatus("loading");
     setMessage("");
 

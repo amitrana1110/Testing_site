@@ -44,14 +44,14 @@ export default function BookingPopup() {
       >
         {/* Modal card */}
         <div
-          className="relative w-full max-w-145 bg-white rounded-2xl border border-border p-5 lg:p-7 shadow-2xl"
+          className="relative w-full max-w-145 bg-surface rounded-2xl border border-border p-5 lg:p-7 shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
           <button
             type="button"
             onClick={close}
-            className="absolute top-3 right-3 lg:top-4 lg:right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-150"
+            className="absolute top-3 right-3 lg:top-4 lg:right-4 w-8 h-8 flex items-center justify-center rounded-full bg-background hover:bg-divider transition-colors duration-150 text-text-secondary cursor-pointer"
             aria-label="Close"
           >
             <svg
@@ -63,7 +63,6 @@ export default function BookingPopup() {
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-gray-600"
             >
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
@@ -77,7 +76,7 @@ export default function BookingPopup() {
           {/* Title row */}
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl shrink-0">🚕</span>
-            <h2 className="text-lg lg:h2 font-bold text-text-primary leading-norml">
+            <h2 className="text-lg lg:h2 font-bold text-text-primary leading-normal">
               Looking for the Best Taxi Service in Kotdwar?
             </h2>
           </div>
@@ -85,11 +84,11 @@ export default function BookingPopup() {
           {/* Description */}
           <p className="text-text-secondary max-lg:text-sm leading-normal mb-4">
             Book your ride with{" "}
-            <strong className="text-gray-900">Rana Taxi Services</strong> —
+            <strong className="text-text-primary font-bold">Rana Taxi Services</strong> —
             Uttarakhand&apos;s premier premium cab provider trusted by{" "}
-            <strong className="text-gray-900">60+ Happy Customers</strong> with
+            <strong className="text-text-primary font-bold">60+ Happy Customers</strong> with
             an outstanding aggregate rating of{" "}
-            <strong className="text-gray-900">4.9★</strong>.
+            <strong className="text-text-primary font-bold">4.9★</strong>.
           </p>
 
           {/* Divider */}
@@ -147,7 +146,7 @@ export default function BookingPopup() {
             <button
               type="button"
               onClick={close}
-              className="text-xs lg:text-sm text-text-light leading-normal underline underline-offset-2 hover:text-text-primary transition-colors duration-200"
+              className="text-xs lg:text-sm text-text-light leading-normal underline underline-offset-2 hover:text-text-primary transition-colors duration-200 cursor-pointer"
             >
               No thanks, I will browse further
             </button>

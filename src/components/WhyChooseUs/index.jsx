@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import ScrollReveal from "../Common/ScrollReveal";
 import defaultFeatures from "@/data/whyChooseUsData.json";
 
 function FeatureCard({ feature }) {
@@ -33,11 +34,11 @@ function FeatureCard({ feature }) {
 
 export default function WhyChooseUs({ features = defaultFeatures }) {
   return (
-    <section className="w-full bg-white pt-16 pb-10">
+    <section className="w-full bg-surface pt-16 pb-10">
       <MaxWidthContainer className="p-0!">
         <div className="flex flex-col items-center lg:px-4 lg:px-0">
           {/* Header */}
-          <div className="flex flex-col items-center gap-1 lg:gap-2.5 self-stretch">
+          <ScrollReveal direction="up" className="flex flex-col items-center gap-1 lg:gap-2.5 self-stretch">
             <p className="text-primary text-[16px] lg:text-lg font-semibold leading-normal text-center uppercase">
               Our Promise
             </p>
@@ -45,17 +46,19 @@ export default function WhyChooseUs({ features = defaultFeatures }) {
               Why Choose Rana Taxi?
             </h2>
             <div className="w-35.25 h-1 lg:h-1.5 bg-primary rounded-full" />
-          </div>
+          </ScrollReveal>
 
-          {/* Desktop Grid — NO CHANGE */}
+          {/* Desktop Grid */}
           <div className="hidden lg:grid grid-cols-4 gap-5.75 w-full mt-10">
-            {features.map((feature) => (
-              <FeatureCard key={feature.title} feature={feature} />
+            {features.map((feature, index) => (
+              <ScrollReveal key={feature.title} delay={index * 150} direction="up">
+                <FeatureCard feature={feature} />
+              </ScrollReveal>
             ))}
           </div>
 
           {/* Mobile Swiper */}
-          <div className="lg:hidden w-full mt-10 overflow-x-clip">
+          <ScrollReveal direction="up" className="lg:hidden w-full mt-10 overflow-x-clip">
             <Swiper
               modules={[Pagination]}
               spaceBetween={10}
@@ -68,18 +71,15 @@ export default function WhyChooseUs({ features = defaultFeatures }) {
               }}
               style={{ paddingLeft: "16px", paddingRight: "16px" }}
               className="pb-10!"
-              // CHANGE: stretch makes ALL slides — including the last one —
-              // take the height of the tallest visible slide at all times
               wrapperClass="!items-stretch"
             >
               {features.map((feature) => (
-                // CHANGE: h-full on SwiperSlide works now because parent is stretch
                 <SwiperSlide key={feature.title} className="h-auto!">
                   <FeatureCard feature={feature} />
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </ScrollReveal>
         </div>
       </MaxWidthContainer>
     </section>

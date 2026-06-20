@@ -41,7 +41,7 @@ export default function BookingForm({ initialData = {} }) {
   // ANTIGRAVITY CHANGE: Checks if all required fields are filled out to enable/disable the Book Now button
   const isFormComplete =
     formData.name.trim() !== "" &&
-    formData.phone.trim() !== "" &&
+    formData.phone.replace(/\D/g, "").length >= 10 &&
     formData.pickup.trim() !== "" &&
     formData.destination.trim() !== "" &&
     formData.travelDate.trim() !== "";
@@ -103,6 +103,14 @@ export default function BookingForm({ initialData = {} }) {
   // ANTIGRAVITY CHANGE: Delay form submission by 2.5 seconds to show the loader spinner on the button first, then present the ticket estimation popup.
   async function handleSubmit(e) {
     e.preventDefault();
+    
+    const digits = formData.phone.replace(/\D/g, "");
+    if (digits.length < 10) {
+      setStatus("error");
+      setMessage("Phone number must be at least 10 digits.");
+      return;
+    }
+
     setStatus("loading");
     setMessage(""); // Make sure no message is displayed above the submit button
 

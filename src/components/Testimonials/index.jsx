@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import Image from "next/image";
+import ScrollReveal from "../Common/ScrollReveal";
 import defaultTestimonials from "@/data/testimonialsData.json";
 
 function StarRating({ rating }) {
@@ -21,7 +21,7 @@ function StarRating({ rating }) {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="flex flex-col gap-2 lg:gap-3.5 p-3 lg:py-5.25 lg:px-4 bg-white rounded-2xl border border-border h-full">
+    <div className="flex flex-col gap-2 lg:gap-3.5 p-3 lg:py-5.25 lg:px-4 bg-surface rounded-2xl border border-border h-full">
       <div className="w-10 h-10 lg:w-15.5 lg:h-15.5 rounded-full overflow-hidden relative">
         <Image
           src={testimonial.img}
@@ -52,27 +52,26 @@ export default function Testimonials({ testimonials = defaultTestimonials }) {
       <MaxWidthContainer className="px-0!">
         <div className="flex flex-col items-center">
           {/* Header */}
-          <div className="flex flex-col items-center gap-1 lg:gap-2 mb-5 lg:mb-10">
+          <ScrollReveal direction="up" className="flex flex-col items-center gap-1 lg:gap-2 mb-5 lg:mb-10">
             <h2 className="text-text-primary h2 lg:text-[36px] font-semibold leading-normal text-center">
               What Our Customers Say
             </h2>
             <p className="text-text-secondary max-lg:text-sm leading-normal text-center">
               Trusted by thousands of happy travelers
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Single Swiper — autoplay loop, responsive breakpoints */}
-          <div className="w-full overflow-x-clip">
+          <ScrollReveal direction="up" className="w-full overflow-x-clip">
             <Swiper
               modules={[Pagination, Autoplay]}
               spaceBetween={20}
               slidesPerView={1.2}
-              // loop keeps cycling endlessly
               loop={true}
               autoplay={{
                 delay: 3000,
-                disableOnInteraction: false, // resumes after user swipes
-                pauseOnMouseEnter: true, // pauses on hover
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
               }}
               pagination={{ clickable: true }}
               breakpoints={{
@@ -90,7 +89,7 @@ export default function Testimonials({ testimonials = defaultTestimonials }) {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </ScrollReveal>
         </div>
       </MaxWidthContainer>
     </section>

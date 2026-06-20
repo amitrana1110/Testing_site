@@ -1,38 +1,42 @@
 "use client";
-import { useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import BookingForm from ".";
 
 export default function BookingFormModal({ isOpen, onClose, initialData }) {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    // Don't lock body scroll — let the overlay handle scrolling
+    setMounted(true);
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, []);
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Outer overlay — THIS scrolls, not the inner modal */}
-      <div className="fixed inset-0 z-50 overflow-y-auto">
+      <div className="fixed inset-0 z-[9999] overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
           {/* Modal card — NO max-h, NO overflow */}
           <div
-            className="relative w-full max-w-[800px] bg-white rounded-2xl border border-border shadow-2xl flex flex-col my-4"
+            className="relative w-full max-w-[800px] bg-surface rounded-2xl border border-border shadow-2xl flex flex-col my-4"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-border">
               <div>
-                <h2 className="text-lg lg:text-xl font-bold text-gray-900 leading-normal">
+                <h2 className="text-lg lg:text-xl font-bold text-text-primary leading-normal">
                   Book Your Ride
                 </h2>
                 <p className="text-text-secondary max-lg:text-sm leading-normal">
@@ -42,7 +46,7 @@ export default function BookingFormModal({ isOpen, onClose, initialData }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-150 shrink-0 ml-4"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-background hover:bg-divider transition-colors duration-150 shrink-0 ml-4 text-text-secondary cursor-pointer"
                 aria-label="Close modal"
               >
                 <svg
@@ -54,7 +58,6 @@ export default function BookingFormModal({ isOpen, onClose, initialData }) {
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-gray-600"
                 >
                   <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
@@ -71,7 +74,7 @@ export default function BookingFormModal({ isOpen, onClose, initialData }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="text-xs lg:text-sm text-text-secondary leading-normal underline underline-offset-2 hover:text-text-primary transition-colors duration-200"
+                className="text-xs lg:text-sm text-text-secondary leading-normal underline underline-offset-2 hover:text-text-primary transition-colors duration-200 cursor-pointer"
               >
                 No thanks, I will browse further
               </button>
@@ -81,4 +84,6 @@ export default function BookingFormModal({ isOpen, onClose, initialData }) {
       </div>
     </>
   );
+
+  return mounted ? createPortal(modalContent, document.body) : null;
 }
